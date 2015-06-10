@@ -9,6 +9,8 @@
       <th>Address</th>
       <th>Phone Number</th>
       <th>Category</th>
+      <th>Comment</th>
+      <th>Rating</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -20,7 +22,17 @@
       <td><%= restaurant.address %></td>
       <td><%= restaurant.phone_number %></td>
       <td><%= restaurant.category %></td>
-      <td><%= link_to('show', restaurant_path(restaurant)) %> | <%= link_to('delete', restaurant_path(restaurant), method: :delete) %></td>
+      <td><% restaurant.reviews.each do |review| %>
+        <ul>
+          <li>
+            <%= review.rating %> | <%= review.content %>
+          </li>
+        </ul>
+        <% end %>
+      </td>
+      <td><%= link_to('show', restaurant_path(restaurant)) %> |
+        <%= link_to('delete', restaurant_path(restaurant), method: :delete)%> |
+        <%= link_to('add review', new_restaurant_review_path(restaurant)) %></td>
     </tr>
     <% end %>
   </tbody>
