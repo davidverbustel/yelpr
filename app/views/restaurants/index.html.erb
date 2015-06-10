@@ -1,0 +1,27 @@
+<h1>Restaurants</h1>
+(<%= link_to 'create a new restaurant', new_restaurant_path %>)
+<hr>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone Number</th>
+      <th>Category</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @restaurants.each do |restaurant| %>
+    <tr>
+      <td><%= restaurant.id %></td>
+      <td><%= restaurant.name %></td>
+      <td><%= restaurant.address %></td>
+      <td><%= restaurant.phone_number %></td>
+      <td><%= restaurant.category %></td>
+      <td><%= link_to('show', restaurant_path(restaurant)) %> | <%= link_to('delete', restaurant_path(restaurant), method: :delete) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
