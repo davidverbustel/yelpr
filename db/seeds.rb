@@ -45,27 +45,27 @@ reviews_attributes = [
   {
     content:       "Face au jardin, on découvre une salle lumineuse... et la cuisine d'Éric Frechon.",
     rating:        3,
-    restaurant_id: 1
+    restaurant_id: 65
   },
   {
     content:       "Donec ullamcorper nulla non metus auctor fringilla.",
     rating:        1,
-    restaurant_id: 2
+    restaurant_id: 66
   },
   {
     content:       "Maecenas sed diam eget risus varius blandit sit amet non magna.",
     rating:        3,
-    restaurant_id: 3
+    restaurant_id: 64
   },
   {
     content:       "Morbi leo risus, porta ac consectetur ac, vestibulum at eros.",
     rating:        5,
-    restaurant_id: 4
+    restaurant_id: 68
   },
   {
     content:       "Face au jardin, on découvre une salle lumineuse... et la cuisine d'Éric Frechon.",
     rating:        2,
-    restaurant_id: 5
+    restaurant_id: 67
   },
 ]
 reviews_attributes.each { |params| Review.create!(params) }
