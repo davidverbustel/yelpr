@@ -3,7 +3,11 @@
 <p>Address: <strong><%= @restaurant.address %></strong></p>
 <p>Phone number: <strong><%= @restaurant.phone_number %></strong></p>
 <p>Category: <strong><%= @restaurant.category %></strong></p>
-
-<p><%= link_to "Back", restaurants_path %> |
+<hr>
+<% @restaurant.reviews.each do |review| %>
+<p><%= review.rating %> | <%= review.content %></p>
+<% end %>
+<hr>
+<p><%= link_to "Back", restaurants_path %>
 
 
